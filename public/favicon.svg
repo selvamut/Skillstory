@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none">
+  <!-- SkillStory Official Symbol Favicon -->
+  <rect width="120" height="120" rx="26" fill="#F8F6F3" />
+  <g transform="translate(18, 14) scale(0.65)">
+    <!-- Charcoal Wing Element -->
+    <path
+      d="M12 28 C30 42 55 60 74 95 C62 82 46 68 28 54 L12 28 Z"
+      fill="#202124"
+    />
+    <path
+      d="M32 6 C58 24 82 52 92 82 C78 72 58 52 32 32 L32 6 Z"
+      fill="#202124"
+    />
+    <!-- Burgundy Wing Accent -->
+    <path
+      d="M32 46 C48 64 68 84 76 108 C64 96 50 82 34 68 Z"
+      fill="#8B1E2D"
+    />
+    <!-- Human Face & Falcon Silhouette Contour in Burgundy -->
+    <path
+      d="M76 108 C90 94 116 80 128 64 C122 62 120 58 122 54 C124 50 128 48 126 44 C124 40 120 38 118 36 C124 34 132 30 134 26 C130 22 120 20 110 24 C100 28 88 38 76 52"
+      stroke="#8B1E2D"
+      stroke-width="7"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      fill="none"
+    />
+    <path
+      d="M92 82 C102 70 116 62 126 50"
+      stroke="#202124"
+      stroke-width="7"
+      stroke-linecap="round"
+      fill="none"
+    />
+  </g>
+</svg>

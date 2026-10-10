@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250" fill="none">
+  <!-- SkillStory Official Brand Logo: Symbol + Wordmark -->
+  <g transform="translate(110, 16)">
+    <!-- Charcoal Upper Wing Blade -->
+    <path
+      d="M16 32 C38 48 72 74 94 116 C80 98 58 80 34 62 L16 32 Z"
+      fill="#202124"
+    />
+    <path
+      d="M42 10 C70 30 98 66 110 104 C94 90 70 64 38 40 L42 10 Z"
+      fill="#202124"
+    />
+    <!-- Burgundy Inner Wing Accent Feather -->
+    <path
+      d="M38 60 C58 82 84 108 94 138 C78 122 60 104 42 86 Z"
+      fill="#8B1E2D"
+    />
+    <!-- Burgundy Human Face Silhouette & Falcon Crest -->
+    <path
+      d="M94 138 C114 120 144 102 158 82 C152 78 148 73 151 68 C154 63 160 61 157 55 C154 50 148 48 145 44 C153 42 164 36 166 30 C161 25 148 22 134 27 C120 33 106 46 90 64"
+      stroke="#8B1E2D"
+      stroke-width="8.5"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      fill="none"
+    />
+    <!-- Charcoal Joint Arc -->
+    <path
+      d="M110 104 C122 90 140 78 154 62"
+      stroke="#202124"
+      stroke-width="8.5"
+      stroke-linecap="round"
+      fill="none"
+    />
+    <!-- Anchor Point -->
+    <circle cx="94" cy="138" r="4.5" fill="#8B1E2D" />
+  </g>
+  <!-- Complete Wordmark: SkillStory -->
+  <text
+    x="200"
+    y="222"
+    text-anchor="middle"
+    fill="#202124"
+    font-family="'Plus Jakarta Sans', 'Outfit', -apple-system, sans-serif"
+    font-size="52"
+    font-weight="700"
+    letter-spacing="-0.8px"
+  >SkillStory</text>
+</svg>
