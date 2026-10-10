@@ -28,7 +28,7 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab, openLegalModal }) 
               <SkillStoryLogo variant="dark" height={54} />
             </button>
             <p className="text-sm text-[#A8ABB0] max-w-sm leading-relaxed">
-              Empowering students and early-career professionals to turn what they have learned, created, and achieved into an authentic, compelling career story.
+              Helping students turn their education, skills, projects and achievements into stronger resumes, LinkedIn profiles and portfolios.
             </p>
             <p className="text-xs font-semibold tracking-wide text-[#E8A5AE] uppercase">
               Your Skills. Your Story. Your Next Step.
@@ -38,7 +38,7 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab, openLegalModal }) 
           {/* Services Column */}
           <div className="space-y-3">
             <h4 className="text-xs font-bold tracking-wider text-[#F8F6F3] uppercase">
-              Core Services
+              Our Categories
             </h4>
             <ul className="space-y-2 text-sm text-[#A8ABB0]">
               <li>
@@ -46,7 +46,7 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab, openLegalModal }) 
                   onClick={() => handleNavClick('services')}
                   className="hover:text-white transition-colors cursor-pointer text-left"
                 >
-                  SkillStory Profile (₹200)
+                  01 · Profile (₹200)
                 </button>
               </li>
               <li>
@@ -54,7 +54,7 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab, openLegalModal }) 
                   onClick={() => handleNavClick('services')}
                   className="hover:text-white transition-colors cursor-pointer text-left"
                 >
-                  SkillStory Pro (₹300)
+                  02 · Presence (₹500)
                 </button>
               </li>
               <li>
@@ -62,7 +62,23 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab, openLegalModal }) 
                   onClick={() => handleNavClick('services')}
                   className="hover:text-white transition-colors cursor-pointer text-left"
                 >
-                  SkillStory Complete (₹500)
+                  03 · Opportunity (From ₹300)
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => handleNavClick('services')}
+                  className="hover:text-white transition-colors cursor-pointer text-left"
+                >
+                  04 · Project (From ₹1,500)
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => handleNavClick('services')}
+                  className="hover:text-white transition-colors cursor-pointer text-left"
+                >
+                  Job-Search Guidance
                 </button>
               </li>
               <li>
@@ -71,22 +87,6 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab, openLegalModal }) 
                   className="hover:text-white transition-colors cursor-pointer text-left"
                 >
                   LinkedIn Growth (₹400)
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => handleNavClick('services')}
-                  className="hover:text-white transition-colors cursor-pointer text-left"
-                >
-                  Job Search Guidance (₹300)
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => handleNavClick('services')}
-                  className="hover:text-white transition-colors cursor-pointer text-left"
-                >
-                  Project Support (₹1,500)
                 </button>
               </li>
             </ul>

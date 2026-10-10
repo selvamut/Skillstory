@@ -81,7 +81,9 @@ export const SkillStoryLogo: React.FC<LogoProps> = ({
 
   // The complete uploaded logo includes both the symbol and wordmark
   // Primary: Load from official asset path with graceful high-fidelity vector fallback
-  const logoSrc = isDark ? '/skill-story-logo-white.svg' : '/skill-story-logo.svg';
+  const baseUrl = import.meta.env.BASE_URL || './';
+  const cleanBase = baseUrl.endsWith('/') ? baseUrl : `${baseUrl}/`;
+  const logoSrc = isDark ? `${cleanBase}skill-story-logo-white.svg` : `${cleanBase}skill-story-logo.svg`;
 
   return (
     <div className={`inline-flex items-center justify-center shrink-0 ${className}`}>

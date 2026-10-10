@@ -13,12 +13,11 @@ import {
   ArrowRight,
   MessageSquare,
   Check,
+  ShieldCheck,
   Sparkles,
-  FileText,
-  Globe,
-  Briefcase,
-  Layers,
-  ChevronRight,
+  Users,
+  AlertCircle,
+  Lightbulb,
 } from 'lucide-react';
 
 interface HomeViewProps {
@@ -26,79 +25,98 @@ interface HomeViewProps {
 }
 
 export const HomeView: React.FC<HomeViewProps> = ({ setActiveTab }) => {
+  // Proposal Page 4: How It Works
   const processSteps = [
     {
       step: 1,
       title: 'Discover',
-      desc: 'We map out your coursework, technical skills, projects, and personal achievements.',
+      desc: 'A student discovers SkillStory and shares their current education, skills, and background.',
     },
     {
       step: 2,
       title: 'Build',
-      desc: 'Transform raw experience into ATS-tested single-column resumes and tailored summaries.',
+      desc: 'Organizes what they already have into clear, structured, and credible career materials.',
     },
     {
       step: 3,
       title: 'Present',
-      desc: 'Develop an online portfolio and professional LinkedIn showcase highlighting real work.',
+      desc: 'Presents their work professionally across an ATS-friendly resume, LinkedIn profile, or portfolio.',
     },
     {
       step: 4,
       title: 'Connect',
-      desc: 'Align your messaging to match specific job descriptions and recruiter expectations.',
+      desc: 'Connects with their chosen field with greater clarity and understanding of job requirements.',
     },
     {
       step: 5,
       title: 'Apply',
-      desc: 'Submit confident, targeted applications with personalized cover notes and scripts.',
+      desc: 'Applies for relevant opportunities with stronger, tailored materials and confidence.',
     },
     {
       step: 6,
       title: 'Grow',
-      desc: 'Iterate your career narrative as your experience, projects, and ambitions expand.',
+      desc: 'Keeps growing, updating their story as new skills, projects, and achievements emerge.',
     },
   ];
 
+  // Proposal Page 2: Our Packages (with confirmed standard rates)
   const packages = [
     {
       id: 'profile',
+      number: 'PACKAGE 01',
       name: 'SkillStory Profile',
+      tagline: 'Build your foundation',
       price: '₹200',
-      desc: 'Complete single-page resume overhaul and ATS alignment for immediate job applications.',
+      desc: 'A personalized resume built around your skills, projects and one target role.',
       features: [
-        'ATS-optimized single-column resume (PDF & Word)',
-        'Headline & summary narrative rewrite',
-        '3–5 project achievement bullet points',
-        '24–48 hour turnaround',
+        'Discovery call',
+        'Resume creation & rework',
+        'JD-based customization',
+        'PDF + editable file',
       ],
+      delivery: 'Within 3 days',
       popular: false,
     },
     {
       id: 'pro',
+      number: 'PACKAGE 02',
       name: 'SkillStory Pro',
+      tagline: 'Build your professional presence',
       price: '₹300',
-      desc: 'Comprehensive career narrative overhaul covering both resume and LinkedIn presence.',
+      desc: 'A complete Resume + LinkedIn Profile package for your next career step.',
       features: [
-        'Everything in SkillStory Profile',
-        'Full LinkedIn profile copy & optimization',
-        'Custom cover letter framework',
-        'Keyword targeting for your chosen sector',
+        'Everything in Profile',
+        'ATS-friendly structure',
+        'Full LinkedIn build-out',
+        'Feedback & discovery call',
       ],
+      delivery: '3–4 days',
       popular: true,
     },
     {
       id: 'complete',
+      number: 'PACKAGE 03',
       name: 'SkillStory Complete',
+      tagline: 'Build your complete identity',
       price: '₹500',
-      desc: 'The all-in-one career presence package with personal web portfolio and interview script.',
+      desc: 'A Resume + LinkedIn + Portfolio package presenting your full profile.',
       features: [
-        'Everything in SkillStory Pro',
-        'Personal single-page web portfolio layout',
-        '1-on-1 narrative strategy consultation',
-        '30-second elevator pitch introduction script',
+        'Everything in Pro',
+        'Personal portfolio site',
+        'Projects & education shown',
+        'Responsive design & deploy',
       ],
+      delivery: '7–15 days',
       popular: false,
     },
+  ];
+
+  // Proposal Page 4: Our Promise
+  const promises = [
+    'We work only with your genuine skills, projects and achievements — nothing fabricated.',
+    'You review and approve everything before it’s final.',
+    'AI is used only as an assistance tool, never a replacement for your own work.',
+    'We don’t guarantee jobs, interviews or placements — we help you present yourself clearly.',
   ];
 
   return (
@@ -114,34 +132,34 @@ export const HomeView: React.FC<HomeViewProps> = ({ setActiveTab }) => {
             {/* Left Content */}
             <div className="lg:col-span-6 space-y-6 text-center lg:text-left">
               
-              {/* Eyebrow kicker */}
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#8B1E2D]/10 text-[#8B1E2D] text-xs font-bold tracking-wider uppercase">
+              {/* Eyebrow Kicker from Proposal */}
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#8B1E2D]/10 text-[#8B1E2D] text-xs font-bold tracking-wider uppercase">
                 <span className="w-2 h-2 rounded-full bg-[#8B1E2D]" />
-                <span>Career Identity &amp; Portfolio Platform</span>
+                <span>For Final-Year Students &amp; Fresh Graduates</span>
               </div>
 
-              {/* Main Headline */}
+              {/* Main Headline: Official Tagline */}
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-display font-extrabold text-[#202124] tracking-tight leading-[1.1] text-balance">
                 Your Skills. <br />
                 Your Story. <br />
                 <span className="text-[#8B1E2D]">Your Next Step.</span>
               </h1>
 
-              {/* Subtitle */}
-              <p className="text-lg sm:text-xl text-[#4A4D52] leading-relaxed max-w-xl mx-auto lg:mx-0">
-                We help students and early-career professionals turn projects, academic work, and real capabilities into polished resumes, LinkedIn profiles, and digital portfolios that open doors.
+              {/* Sub-tagline & Core Proposition from Proposal */}
+              <p className="text-lg sm:text-xl text-[#3C4043] leading-relaxed max-w-xl mx-auto lg:mx-0">
+                Helping students turn their education, skills, projects and achievements into stronger resumes, LinkedIn profiles and portfolios.
               </p>
 
               {/* CTAs */}
               <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
                 <a
-                  href="https://wa.me/?text=Hi%20SkillStory%2C%20I%20would%20like%20to%20get%20started%20with%20my%20career%20profile."
+                  href="https://wa.me/?text=Hi%20SkillStory%2C%20I%20would%20like%20to%20discuss%20my%20career%20profile."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg bg-[#8B1E2D] hover:bg-[#5E1421] text-white text-base font-bold shadow-md hover:shadow-lg transition-all"
                 >
                   <MessageSquare className="w-5 h-5" />
-                  <span>Start on WhatsApp</span>
+                  <span>Start Your Story</span>
                   <ArrowRight className="w-4 h-4" />
                 </a>
 
@@ -149,23 +167,23 @@ export const HomeView: React.FC<HomeViewProps> = ({ setActiveTab }) => {
                   onClick={() => setActiveTab('packages')}
                   className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg border-2 border-[#202124] text-[#202124] hover:bg-[#202124] hover:text-white text-base font-bold transition-all cursor-pointer"
                 >
-                  <span>View Packages (from ₹200)</span>
+                  <span>Explore Packages (from ₹200)</span>
                 </button>
               </div>
 
-              {/* Quiet Proof Markers */}
+              {/* Quiet Framing Indicators from Proposal */}
               <div className="pt-4 flex flex-wrap items-center justify-center lg:justify-start gap-6 text-xs text-[#5F6368] font-medium">
                 <span className="flex items-center gap-1.5">
                   <Check className="w-4 h-4 text-[#8B1E2D]" />
-                  <span>ATS-Optimized Formats</span>
+                  <span>Guidance &amp; Support Only</span>
                 </span>
                 <span className="flex items-center gap-1.5">
                   <Check className="w-4 h-4 text-[#8B1E2D]" />
-                  <span>24–48h Standard Delivery</span>
+                  <span>Nothing Fabricated</span>
                 </span>
                 <span className="flex items-center gap-1.5">
                   <Check className="w-4 h-4 text-[#8B1E2D]" />
-                  <span>Transparent Fixed Pricing</span>
+                  <span>You Review Before Final</span>
                 </span>
               </div>
 
@@ -181,45 +199,60 @@ export const HomeView: React.FC<HomeViewProps> = ({ setActiveTab }) => {
       </section>
 
       {/* ======================================================== */}
-      {/* 2. CORE VALUE STRIP                                      */}
+      {/* 2. THE CONCEPT BREAKDOWN (Proposal Page 1 Table)         */}
       {/* ======================================================== */}
       <section className="py-12 bg-white border-y border-[#E8E4DD]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="space-y-2">
-              <p className="text-xs font-bold text-[#8B1E2D] uppercase tracking-wider">01. Clarity First</p>
-              <h3 className="text-base font-bold text-[#202124]">Authentic Storytelling</h3>
-              <p className="text-xs text-[#5F6368] leading-relaxed">
-                No exaggerated claims or buzzword padding. We articulate your genuine technical projects, coursework, and problem-solving skills.
-              </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+            
+            {/* For */}
+            <div className="flex gap-4 p-5 rounded-xl bg-[#F8F6F3] border border-[#E8E4DD]">
+              <div className="w-10 h-10 rounded-lg bg-[#8B1E2D]/10 text-[#8B1E2D] flex items-center justify-center shrink-0">
+                <Users className="w-5 h-5" />
+              </div>
+              <div className="space-y-1">
+                <p className="text-xs font-bold text-[#8B1E2D] uppercase tracking-wider">For</p>
+                <h3 className="text-base font-bold text-[#202124]">Final-Year Students &amp; Fresh Graduates</h3>
+                <p className="text-xs text-[#5F6368] leading-relaxed">
+                  And anyone with projects, certifications or achievements they don't know how to present.
+                </p>
+              </div>
             </div>
-            <div className="space-y-2">
-              <p className="text-xs font-bold text-[#8B1E2D] uppercase tracking-wider">02. Recruiter Precision</p>
-              <h3 className="text-base font-bold text-[#202124]">ATS-Proof Structure</h3>
-              <p className="text-xs text-[#5F6368] leading-relaxed">
-                Standard single-column layouts that parse smoothly across Taleo, Workday, Greenhouse, and recruiter inbox scanners.
-              </p>
+
+            {/* The Gap */}
+            <div className="flex gap-4 p-5 rounded-xl bg-[#F8F6F3] border border-[#E8E4DD]">
+              <div className="w-10 h-10 rounded-lg bg-[#8B1E2D]/10 text-[#8B1E2D] flex items-center justify-center shrink-0">
+                <AlertCircle className="w-5 h-5" />
+              </div>
+              <div className="space-y-1">
+                <p className="text-xs font-bold text-[#8B1E2D] uppercase tracking-wider">The Gap</p>
+                <h3 className="text-base font-bold text-[#202124]">Real Skills Not Presented Professionally</h3>
+                <p className="text-xs text-[#5F6368] leading-relaxed">
+                  Most students already have real skills and meaningful achievements — what they're missing is a clear, professional way to show them.
+                </p>
+              </div>
             </div>
-            <div className="space-y-2">
-              <p className="text-xs font-bold text-[#8B1E2D] uppercase tracking-wider">03. Accessible to All</p>
-              <h3 className="text-base font-bold text-[#202124]">Student-Friendly Pricing</h3>
-              <p className="text-xs text-[#5F6368] leading-relaxed">
-                Transparent standard rates starting at ₹200 for a complete profile overhaul. No hidden subscriptions or upsells.
-              </p>
+
+            {/* The Idea */}
+            <div className="flex gap-4 p-5 rounded-xl bg-[#F8F6F3] border border-[#E8E4DD]">
+              <div className="w-10 h-10 rounded-lg bg-[#8B1E2D]/10 text-[#8B1E2D] flex items-center justify-center shrink-0">
+                <Lightbulb className="w-5 h-5" />
+              </div>
+              <div className="space-y-1">
+                <p className="text-xs font-bold text-[#8B1E2D] uppercase tracking-wider">The Idea</p>
+                <h3 className="text-base font-bold text-[#202124]">Shape What You Have Into a Credible Story</h3>
+                <p className="text-xs text-[#5F6368] leading-relaxed">
+                  Turn your existing education, projects and capabilities into resumes, LinkedIn profiles and portfolios that actually reflect your worth.
+                </p>
+              </div>
             </div>
-            <div className="space-y-2">
-              <p className="text-xs font-bold text-[#8B1E2D] uppercase tracking-wider">04. Rapid Turnaround</p>
-              <h3 className="text-base font-bold text-[#202124]">Prompt 24–48h Delivery</h3>
-              <p className="text-xs text-[#5F6368] leading-relaxed">
-                Fast collaboration over WhatsApp and email so you never miss an application deadline or placement drive.
-              </p>
-            </div>
+
           </div>
         </div>
       </section>
 
       {/* ======================================================== */}
-      {/* 3. FOUR CORE SERVICES SPOTLIGHT                          */}
+      {/* 3. WHAT WE OFFER: FOUR CORE CATEGORIES (Proposal Page 2) */}
       {/* ======================================================== */}
       <section className="py-20 md:py-28 bg-[#F8F6F3]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
@@ -227,135 +260,147 @@ export const HomeView: React.FC<HomeViewProps> = ({ setActiveTab }) => {
           {/* Section Header */}
           <div className="max-w-2xl mx-auto text-center space-y-3">
             <span className="text-xs font-bold tracking-widest text-[#8B1E2D] uppercase">
-              WHAT WE DELIVER
+              WHAT WE OFFER
             </span>
             <h2 className="text-3xl sm:text-4xl font-display font-bold text-[#202124]">
-              Everything You Need to Step Forward
+              Four Simple Categories
             </h2>
-            <p className="text-base text-[#5F6368]">
-              Targeted, professional services tailored specifically for college graduates, engineering students, and early-career jobseekers.
+            <p className="text-base text-[#5F6368] leading-relaxed">
+              SkillStory's work is organized into four simple categories. Each one takes something you already have — your education, projects, skills or achievements — and helps you present it clearly.
             </p>
           </div>
 
           {/* Service Cards Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
             
-            {/* Service 1: SkillStory Profile */}
+            {/* Category 01: Profile */}
             <div className="bg-white rounded-2xl border border-[#E8E4DD] p-8 shadow-sm flex flex-col justify-between hover:border-[#8B1E2D]/40 transition-colors">
               <div className="space-y-6">
                 <ProfileServiceIllustration />
                 <div>
-                  <div className="flex items-center justify-between mb-2">
-                    <span className="text-xs font-bold tracking-wider text-[#8B1E2D] uppercase">Profile &amp; Resume</span>
+                  <div className="flex items-center justify-between mb-1.5">
+                    <span className="text-xs font-mono font-bold tracking-wider text-[#8B1E2D]">01 · PROFILE</span>
                     <span className="text-lg font-bold text-[#202124]">₹200</span>
                   </div>
-                  <h3 className="text-xl font-bold text-[#202124]">SkillStory Profile</h3>
+                  <h3 className="text-xl font-bold text-[#202124]">Your Professional Foundation</h3>
                   <p className="text-sm text-[#5F6368] mt-2 leading-relaxed">
-                    A complete resume transformation that turns raw class projects, internships, and certifications into a clean, compelling single-page document.
+                    Turns your education and experience into a resume and LinkedIn profile that actually represent you.
                   </p>
                 </div>
                 <ul className="space-y-2 text-xs text-[#3C4043] border-t border-[#F0ECE6] pt-4">
                   <li className="flex items-center gap-2">
                     <Check className="w-3.5 h-3.5 text-[#8B1E2D]" />
-                    <span>Single-column ATS-compliant structure</span>
+                    <span>Resume creation &amp; rework</span>
                   </li>
                   <li className="flex items-center gap-2">
                     <Check className="w-3.5 h-3.5 text-[#8B1E2D]" />
-                    <span>Impact-focused project bullet points</span>
+                    <span>JD-based resume customization</span>
                   </li>
                   <li className="flex items-center gap-2">
                     <Check className="w-3.5 h-3.5 text-[#8B1E2D]" />
-                    <span>LinkedIn summary recommendation</span>
+                    <span>Resume review &amp; improvement</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <Check className="w-3.5 h-3.5 text-[#8B1E2D]" />
+                    <span>LinkedIn profile setup &amp; optimization</span>
                   </li>
                 </ul>
               </div>
               <div className="pt-6 mt-6 border-t border-[#F0ECE6]">
                 <a
-                  href="https://wa.me/?text=Hi%20SkillStory%2C%20I%20would%20like%20the%20SkillStory%20Profile%20(₹200)."
+                  href="https://wa.me/?text=Hi%20SkillStory%2C%20I%20would%20like%20to%20enquire%20about%2001%20Profile%20(₹200)."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-between w-full px-4 py-2.5 rounded-lg bg-[#F8F6F3] hover:bg-[#8B1E2D] text-[#202124] hover:text-white text-xs font-bold transition-colors"
                 >
-                  <span>Enquire for SkillStory Profile</span>
+                  <span>Enquire for Profile Support</span>
                   <ArrowRight className="w-4 h-4" />
                 </a>
               </div>
             </div>
 
-            {/* Service 2: Digital Presence & Portfolio */}
+            {/* Category 02: Presence */}
             <div className="bg-white rounded-2xl border border-[#E8E4DD] p-8 shadow-sm flex flex-col justify-between hover:border-[#8B1E2D]/40 transition-colors">
               <div className="space-y-6">
                 <PresenceServiceIllustration />
                 <div>
-                  <div className="flex items-center justify-between mb-2">
-                    <span className="text-xs font-bold tracking-wider text-[#8B1E2D] uppercase">Web Presence</span>
+                  <div className="flex items-center justify-between mb-1.5">
+                    <span className="text-xs font-mono font-bold tracking-wider text-[#8B1E2D]">02 · PRESENCE</span>
                     <span className="text-lg font-bold text-[#202124]">₹500</span>
                   </div>
-                  <h3 className="text-xl font-bold text-[#202124]">SkillStory Complete Portfolio</h3>
+                  <h3 className="text-xl font-bold text-[#202124]">Showcase Your Work</h3>
                   <p className="text-sm text-[#5F6368] mt-2 leading-relaxed">
-                    A personal digital portfolio website to host project live demos, GitHub repositories, research papers, and your full professional bio.
+                    Helps your projects, skills and personal brand show up clearly wherever someone looks you up.
                   </p>
                 </div>
                 <ul className="space-y-2 text-xs text-[#3C4043] border-t border-[#F0ECE6] pt-4">
                   <li className="flex items-center gap-2">
                     <Check className="w-3.5 h-3.5 text-[#8B1E2D]" />
-                    <span>Personal web showcase layout</span>
+                    <span>Portfolio website guidance</span>
                   </li>
                   <li className="flex items-center gap-2">
                     <Check className="w-3.5 h-3.5 text-[#8B1E2D]" />
-                    <span>Interactive project and skill sections</span>
+                    <span>Project &amp; achievement showcase</span>
                   </li>
                   <li className="flex items-center gap-2">
                     <Check className="w-3.5 h-3.5 text-[#8B1E2D]" />
-                    <span>Mobile responsive &amp; GitHub Pages ready</span>
+                    <span>LinkedIn content guidance</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <Check className="w-3.5 h-3.5 text-[#8B1E2D]" />
+                    <span>Ethical AI-assisted content support</span>
                   </li>
                 </ul>
               </div>
               <div className="pt-6 mt-6 border-t border-[#F0ECE6]">
                 <a
-                  href="https://wa.me/?text=Hi%20SkillStory%2C%20I%20would%20like%20the%20SkillStory%20Complete%20Portfolio%20(₹500)."
+                  href="https://wa.me/?text=Hi%20SkillStory%2C%20I%20would%20like%20to%20enquire%20about%2002%20Presence%20(₹500)."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-between w-full px-4 py-2.5 rounded-lg bg-[#F8F6F3] hover:bg-[#8B1E2D] text-[#202124] hover:text-white text-xs font-bold transition-colors"
                 >
-                  <span>Enquire for Complete Portfolio</span>
+                  <span>Enquire for Presence &amp; Portfolio</span>
                   <ArrowRight className="w-4 h-4" />
                 </a>
               </div>
             </div>
 
-            {/* Service 3: Job Search Guidance */}
+            {/* Category 03: Opportunity */}
             <div className="bg-white rounded-2xl border border-[#E8E4DD] p-8 shadow-sm flex flex-col justify-between hover:border-[#8B1E2D]/40 transition-colors">
               <div className="space-y-6">
                 <OpportunityServiceIllustration />
                 <div>
-                  <div className="flex items-center justify-between mb-2">
-                    <span className="text-xs font-bold tracking-wider text-[#8B1E2D] uppercase">Application Strategy</span>
+                  <div className="flex items-center justify-between mb-1.5">
+                    <span className="text-xs font-mono font-bold tracking-wider text-[#8B1E2D]">03 · OPPORTUNITY</span>
                     <span className="text-lg font-bold text-[#202124]">Starting at ₹300</span>
                   </div>
-                  <h3 className="text-xl font-bold text-[#202124]">Job Search Guidance</h3>
+                  <h3 className="text-xl font-bold text-[#202124]">Navigate the Job Search</h3>
                   <p className="text-sm text-[#5F6368] mt-2 leading-relaxed">
-                    Personalized strategy to align your resume with specific job requirements, identify relevant openings, and navigate campus placement drives.
+                    Practical guidance on finding the right opportunities and applying to them with confidence.
                   </p>
                 </div>
                 <ul className="space-y-2 text-xs text-[#3C4043] border-t border-[#F0ECE6] pt-4">
                   <li className="flex items-center gap-2">
                     <Check className="w-3.5 h-3.5 text-[#8B1E2D]" />
-                    <span>Job description keyword mapping</span>
+                    <span>Where to find relevant roles</span>
                   </li>
                   <li className="flex items-center gap-2">
                     <Check className="w-3.5 h-3.5 text-[#8B1E2D]" />
-                    <span>Tailored application cover messages</span>
+                    <span>Understanding job descriptions</span>
                   </li>
                   <li className="flex items-center gap-2">
                     <Check className="w-3.5 h-3.5 text-[#8B1E2D]" />
-                    <span>Cold outreach &amp; LinkedIn connection strategy</span>
+                    <span>Application guidance</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <Check className="w-3.5 h-3.5 text-[#8B1E2D]" />
+                    <span>Basic networking guidance</span>
                   </li>
                 </ul>
               </div>
               <div className="pt-6 mt-6 border-t border-[#F0ECE6]">
                 <a
-                  href="https://wa.me/?text=Hi%20SkillStory%2C%20I%20would%20like%20Job%20Search%20Guidance%20(Starting%20at%20₹300)."
+                  href="https://wa.me/?text=Hi%20SkillStory%2C%20I%20would%20like%20to%20enquire%20about%2003%20Opportunity%20(Starting%20at%20₹300)."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-between w-full px-4 py-2.5 rounded-lg bg-[#F8F6F3] hover:bg-[#8B1E2D] text-[#202124] hover:text-white text-xs font-bold transition-colors"
@@ -366,38 +411,42 @@ export const HomeView: React.FC<HomeViewProps> = ({ setActiveTab }) => {
               </div>
             </div>
 
-            {/* Service 4: Academic & Project Support */}
+            {/* Category 04: Project */}
             <div className="bg-white rounded-2xl border border-[#E8E4DD] p-8 shadow-sm flex flex-col justify-between hover:border-[#8B1E2D]/40 transition-colors">
               <div className="space-y-6">
                 <ProjectServiceIllustration />
                 <div>
-                  <div className="flex items-center justify-between mb-2">
-                    <span className="text-xs font-bold tracking-wider text-[#8B1E2D] uppercase">Academic &amp; Research</span>
+                  <div className="flex items-center justify-between mb-1.5">
+                    <span className="text-xs font-mono font-bold tracking-wider text-[#8B1E2D]">04 · PROJECT</span>
                     <span className="text-lg font-bold text-[#202124]">Starting at ₹1,500</span>
                   </div>
-                  <h3 className="text-xl font-bold text-[#202124]">Academic &amp; Project Support</h3>
+                  <h3 className="text-xl font-bold text-[#202124]">Present Your Academic Work</h3>
                   <p className="text-sm text-[#5F6368] mt-2 leading-relaxed">
-                    Structuring final year engineering projects, seminar presentation decks, research abstracts, and clear documentation.
+                    Turns your final-year project into something you can document and explain with confidence.
                   </p>
                 </div>
                 <ul className="space-y-2 text-xs text-[#3C4043] border-t border-[#F0ECE6] pt-4">
                   <li className="flex items-center gap-2">
                     <Check className="w-3.5 h-3.5 text-[#8B1E2D]" />
-                    <span>Project report structuring &amp; technical documentation</span>
+                    <span>Final-year project guidance</span>
                   </li>
                   <li className="flex items-center gap-2">
                     <Check className="w-3.5 h-3.5 text-[#8B1E2D]" />
-                    <span>Slide deck preparation for project defense</span>
+                    <span>Structure &amp; documentation support</span>
                   </li>
                   <li className="flex items-center gap-2">
                     <Check className="w-3.5 h-3.5 text-[#8B1E2D]" />
-                    <span>Methodology and findings narrative flow</span>
+                    <span>Presentation preparation</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <Check className="w-3.5 h-3.5 text-[#8B1E2D]" />
+                    <span>Guidance for interview discussions</span>
                   </li>
                 </ul>
               </div>
               <div className="pt-6 mt-6 border-t border-[#F0ECE6]">
                 <a
-                  href="https://wa.me/?text=Hi%20SkillStory%2C%20I%20would%20like%20Academic%20%26%20Project%20Support%20(Starting%20at%20₹1,500)."
+                  href="https://wa.me/?text=Hi%20SkillStory%2C%20I%20would%20like%20to%20enquire%20about%2004%20Project%20Support%20(Starting%20at%20₹1,500)."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-between w-full px-4 py-2.5 rounded-lg bg-[#F8F6F3] hover:bg-[#8B1E2D] text-[#202124] hover:text-white text-xs font-bold transition-colors"
@@ -410,12 +459,12 @@ export const HomeView: React.FC<HomeViewProps> = ({ setActiveTab }) => {
 
           </div>
 
-          <div className="text-center pt-4">
+          <div className="text-center pt-2">
             <button
               onClick={() => setActiveTab('services')}
               className="inline-flex items-center gap-2 text-sm font-bold text-[#8B1E2D] hover:text-[#5E1421] transition-colors cursor-pointer"
             >
-              <span>Explore all service specifications and options</span>
+              <span>View detailed breakdown and standalone support options</span>
               <ArrowRight className="w-4 h-4" />
             </button>
           </div>
@@ -424,20 +473,20 @@ export const HomeView: React.FC<HomeViewProps> = ({ setActiveTab }) => {
       </section>
 
       {/* ======================================================== */}
-      {/* 4. PROCESS ROADMAP: Discover → Build → Present → ...    */}
+      {/* 4. HOW IT WORKS (Proposal Page 4)                        */}
       {/* ======================================================== */}
       <section className="py-20 md:py-24 bg-white border-y border-[#E8E4DD]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
           
-          <div className="max-w-2xl mx-auto text-center space-y-3">
+          <div className="max-w-3xl mx-auto text-center space-y-3">
             <span className="text-xs font-bold tracking-widest text-[#8B1E2D] uppercase">
-              HOW WE WORK
+              HOW IT WORKS
             </span>
             <h2 className="text-3xl sm:text-4xl font-display font-bold text-[#202124]">
-              The Six-Step Story Process
+              Discover · Build · Present · Connect · Apply · Grow
             </h2>
-            <p className="text-base text-[#5F6368]">
-              A structured, collaborative pathway from raw coursework and projects to career confidence.
+            <p className="text-base text-[#5F6368] leading-relaxed">
+              A student discovers SkillStory, organizes what they already have, presents it professionally, connects with their field, applies with stronger materials — and keeps growing.
             </p>
           </div>
 
@@ -467,20 +516,53 @@ export const HomeView: React.FC<HomeViewProps> = ({ setActiveTab }) => {
       </section>
 
       {/* ======================================================== */}
-      {/* 5. PACKAGES & PRICING PREVIEW                            */}
+      {/* 5. OUR PROMISE (Proposal Page 4)                         */}
+      {/* ======================================================== */}
+      <section className="py-16 md:py-20 bg-[#FAF8F5] border-b border-[#E8E4DD]">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+          <div className="text-center space-y-2">
+            <div className="inline-flex items-center gap-2 text-xs font-bold text-[#8B1E2D] uppercase tracking-wider">
+              <ShieldCheck className="w-4 h-4" />
+              <span>Ethical Standards &amp; Principles</span>
+            </div>
+            <h2 className="text-3xl font-display font-bold text-[#202124]">
+              Our Promise
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {promises.map((promise, idx) => (
+              <div
+                key={idx}
+                className="flex items-start gap-3.5 p-5 rounded-xl bg-white border border-[#E8E4DD] shadow-xs"
+              >
+                <div className="w-6 h-6 rounded-full bg-[#8B1E2D]/10 text-[#8B1E2D] flex items-center justify-center shrink-0 mt-0.5">
+                  <Check className="w-3.5 h-3.5 stroke-[2.5]" />
+                </div>
+                <p className="text-sm text-[#202124] font-medium leading-relaxed">
+                  {promise}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ======================================================== */}
+      {/* 6. OUR PACKAGES (Proposal Page 2)                        */}
       {/* ======================================================== */}
       <section className="py-20 md:py-28 bg-[#F8F6F3]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
           
           <div className="max-w-2xl mx-auto text-center space-y-3">
             <span className="text-xs font-bold tracking-widest text-[#8B1E2D] uppercase">
-              TRANSPARENT STANDARD RATES
+              OUR PACKAGES
             </span>
             <h2 className="text-3xl sm:text-4xl font-display font-bold text-[#202124]">
-              Choose Your Package
+              Three Simple, Bundled Packages
             </h2>
-            <p className="text-base text-[#5F6368]">
-              Straightforward pricing crafted for students. No recurring charges, hidden fees, or subscriptions.
+            <p className="text-base text-[#5F6368] leading-relaxed">
+              Our core services come together into three simple, bundled packages — each building on the one before it.
             </p>
           </div>
 
@@ -496,13 +578,19 @@ export const HomeView: React.FC<HomeViewProps> = ({ setActiveTab }) => {
               >
                 {pkg.popular && (
                   <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-[#8B1E2D] text-white text-[11px] font-bold uppercase tracking-wider">
-                    Recommended Package
+                    Most Popular
                   </div>
                 )}
 
                 <div className="space-y-6">
                   <div className="flex items-center justify-between">
-                    <PackageBadgeIcon tier={pkg.id as 'profile' | 'pro' | 'complete'} />
+                    <div>
+                      <span className="text-xs font-mono font-bold text-[#8B1E2D] block">
+                        {pkg.number}
+                      </span>
+                      <h3 className="text-xl font-bold text-[#202124] mt-0.5">{pkg.name}</h3>
+                      <p className="text-xs font-semibold text-[#8B1E2D]">{pkg.tagline}</p>
+                    </div>
                     <div className="text-right">
                       <span className="text-3xl font-display font-extrabold text-[#202124]">
                         {pkg.price}
@@ -511,26 +599,30 @@ export const HomeView: React.FC<HomeViewProps> = ({ setActiveTab }) => {
                     </div>
                   </div>
 
-                  <div>
-                    <h3 className="text-xl font-bold text-[#202124]">{pkg.name}</h3>
-                    <p className="text-xs text-[#5F6368] mt-2 leading-relaxed">
-                      {pkg.desc}
-                    </p>
+                  <p className="text-xs text-[#5F6368] leading-relaxed">
+                    {pkg.desc}
+                  </p>
+
+                  <div className="border-t border-[#F0ECE6] pt-4 space-y-2">
+                    <p className="text-[11px] font-bold uppercase tracking-wider text-[#202124]">Includes:</p>
+                    <ul className="space-y-2 text-xs text-[#3C4043]">
+                      {pkg.features.map((feat, i) => (
+                        <li key={i} className="flex items-start gap-2">
+                          <Check className="w-3.5 h-3.5 text-[#8B1E2D] shrink-0 mt-0.5" />
+                          <span>{feat}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
 
-                  <ul className="space-y-2.5 text-xs text-[#3C4043] border-t border-[#F0ECE6] pt-5">
-                    {pkg.features.map((feat, i) => (
-                      <li key={i} className="flex items-start gap-2">
-                        <Check className="w-4 h-4 text-[#8B1E2D] shrink-0 mt-0.5" />
-                        <span>{feat}</span>
-                      </li>
-                    ))}
-                  </ul>
+                  <div className="p-2.5 rounded-lg bg-[#FAF8F5] border border-[#E8E4DD] text-xs text-[#5F6368]">
+                    <strong>Delivery:</strong> {pkg.delivery}
+                  </div>
                 </div>
 
                 <div className="pt-6 mt-6 border-t border-[#F0ECE6]">
                   <a
-                    href={`https://wa.me/?text=Hi%20SkillStory%2C%20I%20would%20like%20to%20book%20the%20${encodeURIComponent(
+                    href={`https://wa.me/?text=Hi%20SkillStory%2C%20I%20would%20like%20to%20book%20${encodeURIComponent(
                       pkg.name
                     )}%20(${encodeURIComponent(pkg.price)}).`}
                     target="_blank"
@@ -554,7 +646,7 @@ export const HomeView: React.FC<HomeViewProps> = ({ setActiveTab }) => {
               onClick={() => setActiveTab('packages')}
               className="text-xs font-bold text-[#8B1E2D] hover:underline cursor-pointer"
             >
-              See complete package comparison &amp; add-ons (LinkedIn Growth ₹400, Project Support ₹1,500) →
+              View detailed package comparison &amp; additional standalone support (Project, Job-Search, LinkedIn) →
             </button>
           </div>
 
@@ -562,27 +654,30 @@ export const HomeView: React.FC<HomeViewProps> = ({ setActiveTab }) => {
       </section>
 
       {/* ======================================================== */}
-      {/* 6. FOUNDER SECTION                                       */}
+      {/* 7. FOUNDER SECTION                                       */}
       {/* ======================================================== */}
       <FounderSection />
 
       {/* ======================================================== */}
-      {/* 7. FINAL CALL TO ACTION                                  */}
+      {/* 8. WHO IT'S FOR & WHAT'S NEXT (Proposal Page 4)          */}
       {/* ======================================================== */}
       <section className="py-16 md:py-20 bg-[#202124] text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
           <span className="text-xs font-bold tracking-widest text-[#E8A5AE] uppercase">
-            TAKE YOUR NEXT STEP
+            WHO IT'S FOR &amp; WHAT'S NEXT
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold tracking-tight text-balance">
-            Every Great Career Begins with a Clear Story.
+            Many Students Already Have What It Takes.
           </h2>
-          <p className="text-base sm:text-lg text-[#A8ABB0] max-w-xl mx-auto">
-            Share what you have learned and built. We’ll help you communicate your strengths with clarity, purpose, and impact.
+          <p className="text-base sm:text-lg text-[#DCD5C9] max-w-2xl mx-auto leading-relaxed">
+            SkillStory just helps them show it. Final-year students, fresh graduates, and anyone with projects, certifications or achievements they don't know how to present.
+          </p>
+          <p className="text-sm font-semibold text-[#E8A5AE] uppercase tracking-wider">
+            Your Skills. Your Story. Your Next Step.
           </p>
           <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
-              href="https://wa.me/?text=Hi%20SkillStory%2C%20I%20am%20ready%20to%20start%20my%20career%20story."
+              href="https://wa.me/?text=Hi%20SkillStory%2C%20I%20would%20like%20to%20get%20started."
               target="_blank"
               rel="noopener noreferrer"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg bg-[#8B1E2D] hover:bg-[#5E1421] text-white text-sm font-bold shadow-md transition-colors"

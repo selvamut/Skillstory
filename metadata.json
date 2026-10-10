@@ -1,6 +1,6 @@
 {
   "name": "SkillStory — Career Identity & Portfolio Platform",
-  "description": "Professional resumes, LinkedIn profiles, personal portfolios, and career storytelling for students and early-career professionals.",
+  "description": "Helping students turn their education, skills, projects and achievements into stronger resumes, LinkedIn profiles and portfolios.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }
